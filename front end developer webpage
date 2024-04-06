@@ -1,0 +1,358 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+    }
+    .image {
+        flex: 1;
+        height: 100vh;
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_RD3iBahTcNBwtSt63-JkS1lQ1ru8y42_3c90rYAimHRKAhYux0pU-6OUS7bUgctN_Rg&usqp=CAU.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .form-container {
+        flex: 1;
+        padding: 50px;
+    }
+    h2 {
+        margin-top: 0;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        background-color: pink;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #ff69b4;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="image"></div>
+    <div class="form-container">
+        <h2>Sign Up to Dribbble</h2>
+        <form id="signup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions</label>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+</div>
+<script>
+    document.getElementById("signup-form").addEventListener("submit", function(event){
+        event.preventDefault("page2.html"); // prevent form submission
+        // Perform any form validation here
+        // If validation passes, you can redirect to page 2 using window.location.href = "page2.html";
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<page2.html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Profile</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  h1 {
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  .avatar-upload {
+    margin-bottom: 50px;
+  }
+  .avatar-upload img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .location-input {
+    margin-bottom: 20px;
+  }
+  .location-input input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .btn-container {
+    position: bottom;
+    bottom: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    text-align: right;
+  }
+  .btn {
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .btn:hover {
+    background-color: #d81b60;
+  
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Welcome! Let's Create your Profile</h1>
+  
+  <div class="avatar-upload">
+    <label for="avatar">
+      Add Avatar<br>
+      <img id="avatar-preview" src="#" alt="Avatar Preview">
+    </label>
+    <input type="file" id="avatar" accept="image/*">
+  </div>
+  
+  <div class="location-input">
+    <label for="location">Add your Location:</label><br>
+    <input type="text" id="location" placeholder="Enter Your Location">
+  </div>
+  
+  <div class="btn-container">
+    <button class="btn" onclick="redirectToPage3()">Next</button>
+  </div>
+</div>
+
+<script>
+  function redirectToPage3() {
+    window.location.href = "page3.html";
+  }
+  
+  // Avatar Preview
+  document.getElementById('avatar').onchange = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var avatarPreview = document.getElementById('avatar-preview');
+      avatarPreview.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<page3.html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 3</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  h1 {
+    font-weight: bold;
+  }
+  .options {
+    margin-top: 20px;
+  }
+  .box {
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    border: 2px solid #000;
+    margin: 20px;
+    text-align: center;
+    padding-top: 80px;
+    cursor: pointer;
+  }
+  .box:hover {
+    background-color: #eee;
+  }
+  .selected {
+    font-weight: bold;
+  }
+  button {
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  button:hover {
+    background-color: #ff69b4;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>What brings you to perform?</h1>
+  <p>Select the option:</p>
+  <div class="options">
+    <div class="box" onclick="selectOption(1)" id="option1">
+      <p>I'm a designer looking to share my work</p>
+    </div>
+    <div class="box" onclick="selectOption(2)" id="option2">
+      <p>I'm looking to hire a designer</p>
+    </div>
+    <div class="box" onclick="selectOption(3)" id="option3">
+      <p>I'm looking for designer inspirations</p>
+    </div>
+  </div>
+  <button id="finishButton" style="display: ;">Finish</button>
+</div>
+
+<script>
+  function selectOption(option) {
+    var finishButton = document.getElementById('finishButton');
+    finishButton.style.display = 'block';
+    
+    // Remove bold from all options
+    var boxes = document.querySelectorAll('.box');
+    boxes.forEach(function(box) {
+      box.classList.remove('selected');
+    });
+    
+    // Add bold to selected option
+    var selectedBox = document.getElementById('option' + option);
+    selectedBox.classList.add('selected');
+    
+    finishButton.addEventListener('click', function() {
+      window.location.href = 'page4.html'; // Redirect to Page 4
+    });
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<page4.html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="left-section">
+      <input type="text" class="mini-search" placeholder="Search">
+      <img src="profile-pic.jpg" alt="Profile Pic" class="profile-pic">
+    </div>
+    <div class="right-section">
+      <button class="inspection-button">Online Inspection</button>
+      <button class="work-button">Find Work</button>
+      <button class="designer-button">Hire Designer</button>
+      <button class="finish-button">Finish</button>
+    </div>
+  </div>
+  <div class="middle-section">
+    <p class="maroon">Mail sent to: <span id="email-display"></span></p>
+    <p id="email-status" class="maroon">Still email verification pending...</p>
+    <button id="change-email-btn" class="change-email-button maroon">Email ID wrong? Change it.</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
